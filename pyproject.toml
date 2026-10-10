@@ -1,7 +1,25 @@
 [project]
 name = "simple-softmaxlint"
 version = "0.1.0"
-description = "Add your description here"
+description = "A simple implementation of the Softmax Linter"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+  "openai>=3.26.0",
+]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+  "COM812", # missing-trailing-comma
+  "T20",    # flake8-print
+  "ERA",    # eradicate
+  "D",      # docstrings
+  "CPY",    # copyright
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

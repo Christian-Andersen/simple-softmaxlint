@@ -1,0 +1,22 @@
+services:
+  softmaxlint:
+    image: ghcr.io/syv-ai/hyperqwen:latest
+    container_name: softmaxlint
+    ipc: host
+    command: single
+    network_mode: host
+    environment:
+      MODEL: Qwen/Qwen2.5-Coder-7B
+      EXTRA_ARGS: >-
+        --gpu-memory-utilization 0.85
+        --max-model-len 8192
+        --served-model-name coder-7b
+      SPEC: none
+      VERIFY: "0"
+    devices:
+      - "nvidia.com/gpu=all"
+    volumes:
+      - ${HOME}/.cache/huggingface:/root/.cache/huggingface:z
+      - ${HOME}/.cache/hyperqwen/models:/app/models:z
+    security_opt:
+      - label=disable
