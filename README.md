@@ -3,7 +3,7 @@
 Score source code against a local vLLM server using **Fill-In-The-Middle**, and report the
 tokens the model did not expect.
 
-Ported from [softmaxlint](../softmaxlint), reduced to a single file under 200 lines of code.
+Ported from [softmaxlint](https://github.com/Christian-Andersen/softmaxlint), reduced to a single file under 200 lines of code.
 
 ## Example
 
